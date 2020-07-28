@@ -7,16 +7,16 @@ int main(){
     cin >> x;
     for(int j = 0; j < x; j++){
         bool ans = true;
-        stack<char> bruh = {};
+        stack<char> stacky = {};
         string g = {};
         cin >> g;
         for(int i = 0; i < g.size(); i++){
             if(g[i] == '(' || g[i] == '[' || g[i] == '{'){
-                bruh.push(g[i]);
+                stacky.push(g[i]);
             }if(g[i] == ')'){
-                if(!bruh.empty()){
-                    if(bruh.top() == '('){
-                        bruh.pop();
+                if(!stacky.empty()){
+                    if(stacky.top() == '('){
+                        stacky.pop();
                     }else{
                         ans = false;
                     }
@@ -24,9 +24,9 @@ int main(){
                     ans = false;
                     }
             }if(g[i] == ']'){
-                if(!bruh.empty()){
-                    if(bruh.top() == '['){
-                        bruh.pop();
+                if(!stacky.empty()){
+                    if(stacky.top() == '['){
+                        stacky.pop();
                     }else{
                         ans = false;
                     }
@@ -34,9 +34,9 @@ int main(){
                     ans = false;
                     }
             }if(g[i] == '}'){
-                if(!bruh.empty()){
-                    if(bruh.top() == '{'){
-                        bruh.pop();
+                if(!stacky.empty()){
+                    if(stacky.top() == '{'){
+                        stacky.pop();
                     }else{
                         ans = false;
                     }
@@ -45,7 +45,7 @@ int main(){
                     }
             }
         }
-        if(!bruh.empty()){
+        if(!stacky.empty()){
             ans = false;
         }
         if(ans){
